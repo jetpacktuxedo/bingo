@@ -60,6 +60,6 @@ def boardDump(bingoList, width):
 
 # Main stuff
 inList = getFile(args.infile)
-width = args.width
+width = int(args.width[0])
 
 boardDump(smallWords(getList(inList), width), width)
