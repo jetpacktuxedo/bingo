@@ -59,6 +59,5 @@ try:
 	with open(args.infile, 'r') as inList:
 		width = args.width
 		boardDump(smallWords(getList(inList), width), width)
-		inList.close()
 except IOError:
 	print("Sorry, I can't open file: '{}'".format(args.infile))
