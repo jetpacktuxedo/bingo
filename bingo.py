@@ -1,16 +1,6 @@
 #!/usr/bin/python
 import sys, random, textwrap, argparse
 
-parser = argparse.ArgumentParser(description='Generate a bingo board!')
-parser.add_argument('-f', '--file', nargs='?', const="bingo.list",\
-        dest='infile', type=str, required=True, \
-        help='File containing list of bingo words')
-parser.add_argument('-w', '--width', nargs=1, default="9",\
-        dest='width', type=int, help='The width of each cell on the board')
-args = parser.parse_args()
-
-print args.infile
-
 # Reads inFile and converts each line in the file into a list, which is
 # then shuffled before being returned
 def getList(inFile):
@@ -59,6 +49,14 @@ def boardDump(bingoList, width):
         print "=" * (6 + (width * 5))
 
 # Main stuff
+parser = argparse.ArgumentParser(description='Generate a bingo board!')
+parser.add_argument('-f', '--file', nargs='?', const="bingo.list",\
+        dest='infile', type=str, required=True, \
+        help='File containing list of bingo words')
+parser.add_argument('-w', '--width', nargs=1, default="9",\
+        dest='width', type=int, help='The width of each cell on the board')
+args = parser.parse_args()
+
 inList = getFile(args.infile)
 width = int(args.width[0])
 
