@@ -21,7 +21,7 @@ def getList(inFile):
 	try:
 		bingoList = inFile.readlines()
 	except KeyboardInterrupt:
-		print "KeyboardInterrupt"
+		print("KeyboardInterrupt")
 		sys.exit()
 	finally:
 		inFile.close()
