@@ -31,7 +31,7 @@ def getList(inFile):
     sys.exit()
   for index, var in enumerate(bingoList):
     bingoList[index] = var.replace("\n", "")
-  bingoList = filter(None, bingoList)
+  filter(None, bingoList)
   random.shuffle(bingoList)
   bingoList.insert(12, "FREE SPACE")
   return bingoList[:25]
